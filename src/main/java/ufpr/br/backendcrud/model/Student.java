@@ -27,7 +27,7 @@ public class Student {
     @Getter
     private int id;
 
-    @Column(name = "col_name")
+    @Column(name = "col_nome")
     @Setter
     @Getter
     private String name;
