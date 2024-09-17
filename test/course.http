@@ -3,3 +3,29 @@ GET http://localhost:8080/courses
 ###
 
 GET http://localhost:8080/courses/1
+
+###
+
+POST http://localhost:8080/courses
+Content-Type: application/json
+
+{
+    "name": "Java",
+    "link": "https://www.java.com"
+}
+
+###
+
+PUT http://localhost:8080/courses/1
+Content-Type: application/json
+
+{
+    "name": "Nova Java",
+    "link": "https://www.java.com"
+}
+
+###
+
+DELETE http://localhost:8080/courses/1
+
+###

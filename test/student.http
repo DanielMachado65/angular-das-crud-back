@@ -3,3 +3,30 @@ GET http://localhost:8080/students
 ###
 
 GET http://localhost:8080/students/1
+
+###
+
+POST http://localhost:8080/students
+Content-Type: application/json
+
+{
+    "name": "Pedro",
+    "cpf": "12345678901",
+    "email": "pedro@email.com",
+    "birDate": "1990-01-01"
+}
+
+###
+
+PUT http://localhost:8080/students/1
+Content-Type: application/json
+
+{
+    "name": "Pedro"
+}
+
+###
+
+DELETE http://localhost:8080/students/1
+
+###
