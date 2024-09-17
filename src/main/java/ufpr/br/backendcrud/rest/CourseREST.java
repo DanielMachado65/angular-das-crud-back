@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ufpr.br.backendcrud.model.Course;
 import ufpr.br.backendcrud.repository.CourseRepository;
+import ufpr.br.backendcrud.utils.ParamsUtils;
 
 @CrossOrigin
 @RestController
@@ -58,9 +59,12 @@ public class CourseREST {
             return ResponseEntity.notFound().build();
         }
 
-        course.setId(id);
-        courseRepository.save(course);
-        return ResponseEntity.ok(course);
+        Course existingCourse = courseExists.get();
+        existingCourse.setId(id);
+        ParamsUtils.copyNonNullProperties(course, existingCourse);
+
+        courseRepository.save(existingCourse);
+        return ResponseEntity.ok(existingCourse);
     }
 
     @DeleteMapping("courses/{id}")
