@@ -1,0 +1,48 @@
+# Listar todas as matrículas
+GET http://localhost:8080/enrollments
+
+###
+
+# Obter detalhes de uma matrícula específica por ID
+GET http://localhost:8080/enrollments/1
+
+###
+
+# Criar uma nova matrícula
+POST http://localhost:8080/enrollments
+Content-Type: application/json
+
+{
+    "student": {
+        "id": 1
+    },
+    "course": {
+        "id": 2
+    },
+    "grade": 85,
+    "enrollmentDate": "2024-09-17"
+}
+
+###
+
+# Atualizar uma matrícula existente
+PUT http://localhost:8080/enrollments/2
+Content-Type: application/json
+
+{
+    "student": {
+        "id": 1
+    },
+    "course": {
+        "id": 2
+    },
+    "grade": 90,
+    "enrollmentDate": "2024-09-18"
+}
+
+###
+
+# Excluir uma matrícula por ID
+DELETE http://localhost:8080/enrollments/1
+
+###
