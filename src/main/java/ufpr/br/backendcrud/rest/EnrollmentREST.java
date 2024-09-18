@@ -73,4 +73,13 @@ public class EnrollmentREST {
         enrollmentRepository.delete(enrollment.get());
         return ResponseEntity.ok(enrollment.get());
     }
+
+    @GetMapping("enrollments/student/{studentId}")
+    public ResponseEntity<List<Enrollment>> getByStudentId(@PathVariable int studentId) {
+        List<Enrollment> enrollments = enrollmentRepository.findByStudentId(studentId);
+        if (enrollments.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(enrollments);
+    }
 }

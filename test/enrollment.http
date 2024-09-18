@@ -46,3 +46,6 @@ Content-Type: application/json
 DELETE http://localhost:8080/enrollments/1
 
 ###
+
+# Listar todas as matrículas de um aluno específico
+GET http://localhost:8080/enrollments/student/1
