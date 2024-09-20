@@ -42,6 +42,8 @@ public class StudentREST {
 
     @PostMapping("students")
     public ResponseEntity<Student> create(@RequestBody Student student) {
+        student.setCpf(student.getCpf().replaceAll("[^\\d]", ""));
+
         Optional<Student> studentExists = studentRepository.findByName(student.getName());
         if (studentExists.isPresent()) {
             return ResponseEntity.status(HttpStatus.CONFLICT).build();

@@ -46,6 +46,6 @@ public class Student {
     @Column(name = "col_birth_date")
     @Setter
     @Getter
-    private LocalDate birDate; // precisa receber AAAA-MM-DD
+    private LocalDate birthDate; // precisa receber AAAA-MM-DD
 
 }
