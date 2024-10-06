@@ -7,4 +7,6 @@ import ufpr.br.backendcrud.model.Student;
 
 public interface StudentRepository extends JpaRepository<Student, Integer> {
     Optional<Student> findByName(String name);
+
+    Optional<Student> findByCpf(String cpf);
 }
